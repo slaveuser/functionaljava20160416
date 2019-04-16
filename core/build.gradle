@@ -1,0 +1,17 @@
+
+ext {
+    signModule = true
+}
+
+archivesBaseName = project.projectName
+
+dependencies {
+    testCompile dependencyJunit
+}
+
+performSigning(signingEnabled, signModule)
+configureUpload(signingEnabled, signModule)
+
+uploadArchives.enabled = true
+
+configureAllRetroLambda()
